@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y git
 
 WORKDIR /minecraft
 
-COPY BuildTools.jar /minecraft
+RUN wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 
 RUN java -jar BuildTools.jar --rev 1.9
 
