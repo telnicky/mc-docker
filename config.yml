@@ -1,0 +1,240 @@
+# This is your config.yml file. In here you can customize all BukkitGames options.
+# Use double quotes (") instead of single quotes (') for strings!
+# More informaton and tutorials are available here: https://bitbucket.org/ftbastler/bukkitgames/wiki/
+
+# --- DATABASE OPTIONS ---
+
+# If set to true, BukkitGames will use MySQL. If set to false, BukkitGames will use SQLite.
+MYSQL: false
+
+# SQLite Configuration (Use this if you have set MYSQL to false)
+# -> The database file needs to be located in your "/plugins" folder. If it does not exist, BukkitGames will try to create it.
+FILENAME: "bukkitgames"
+EXTENSION: ".db"
+
+# MySQL Configuration (Use this if you have set MYSQL to true)
+# -> Please put your username and password in "".
+HOSTNAME: "mysqlhost.com"
+PORT: 3306
+USERNAME: "test"
+PASSWORD: "pw123"
+DATABASE: "bukkitgames"
+
+
+# --- GENERAL OPTIONS ---
+
+# Set a name for your server. The name will be displayed e.g. in the MOTD. Should not be longer than 32 characters.
+SERVER_NAME: "A BukkitGames server"
+
+# Minimum amount of players required to start the game.
+MIN_PLAYERS_START: 1
+
+# Length of the pre-game period in seconds.
+PREGAME_TIME: 120
+
+# Length of invincibility period in seconds.
+INVINCIBILITY_TIME: 60
+
+# Maximum length of a game in minutes.
+MAX_GAME_TIME: 45
+
+# Time in minutes after which the feast will spawn. For best results set this to MAX_GAME_TIME / 2.
+FEAST_SPAWN_TIME: 22
+
+# If set to true, BukkitGames will provide some default abilities. (Check the wiki to create your own ones!)
+DEFAULT_ABILITIES: true
+
+# If set to true, the health of a tribute will be shown below his name.
+HEALTH_BELOW_NAME: true
+
+# If set to true, players can create teams. (Team members won't be tracked by a player's compass etc.)
+ENABLE_TEAMS: true
+
+
+# --- UPDATING OPTIONS ---
+
+# If set to true, the plugin will automatically install new versions.
+# -> The plugin will also automatically merge your old configuration files with the new ones.
+#    We recommend you to leave this enabled, so bugfixes get installed immediately and you don't have to update the plugin and all files manually all the time.
+AUTO_UPDATE: true
+
+
+# --- MONEY AND KIT OPTIONS ---
+
+# If set to false, kit purchases will be disabled. This means players won't receive any money and the kit shop will be disabled.
+# -> Warning: This also means that players will no longer be able to access kits they have bought using their credits.
+ENABLE_KIT_PURCHASES: true
+
+# Amount of money a player will get when he wins a game.
+MONEY_FOR_WIN: 10
+
+# Amount of money a player will get when he kills a tribute.
+MONEY_FOR_KILL: 5
+
+# Whether kit purchases should be permanent (e.g. buy a kit once and use it forever) or not (e.g. buy a kit only for the next game).
+PERMANENT_KIT_PURCHASES: true
+
+# If set true, the winner of the last game will be able to access all kits (as a reward) for one game, and one game only.
+WINNER_REWARD_ALL_KITS: false
+
+# If set to true, players will also be able to see which kits they could access if he had permissions for them.
+SHOW_OTHER_KITS: true
+
+# If set to true, players that didn't choose a kit when the game starts will be given a random kit of all the kits they can access.
+RANDOM_KIT_IF_NONE: true
+
+
+# --- FUNCTIONAL ITEMS OPTIONS ---
+# -> Please be sure to set a different item for every "ITEM" option in this section.
+
+# If set to true, players will be given items, with which he can open the item menus etc.
+# -> This also toggles if spectators can open the teleport menu with a right click.
+ENABLE_FUNCTIONAL_ITEMS: true
+
+# Set which item to use for opening the "kit selection" menu.
+ITEM_SELECT_KIT_MENU: "CHEST"
+
+# Set which item to use for opening the "kit purchasing" menu.
+ITEM_BUY_KIT_MENU: "EMERALD"
+
+# Set which item to use for displaying the amount of money a player has.
+ITEM_VIEW_MONEY: "GOLD_NUGGET"
+
+# If set to true, players will receive a compass to locate other players, the feast and the cornucopia.
+COMPASS: true
+
+
+# --- FEAST AND CORNUCOPIA GENERATION OPTIONS ---
+
+# If set to true, feast and cornucopia will be protected.
+PROTECT_STRUCTURES: true
+
+# If set to true, a cornucopia will be generated at spawn.
+# -> When BukkitGames uses a custom world, this option will be disabled.
+#    You will have to create a per-world configuration file for that world to enable it (visit the wiki for help).
+GENERATE_CORNUCOPIA: true
+
+# If set to true, a feast will be generated at a random spot after some time (see time options).
+# -> When BukkitGames uses a custom world, this option will be disabled.
+#    You will have to create a per-world configuration file for that world to enable it (visit the wiki for help).
+GENERATE_FEAST: true
+
+
+# --- CUSTOM WORLD OPTIONS ---
+# -> The options in this section only apply if you have added a custom world to the BukkitGames. (Visit the wiki for more information.)
+
+# If set to true, the plugin will decide everytime your server starts whether to use a custom world or a randomly generated one.
+RANDOM_WORLD_PICKING: false
+
+# If set to true, at the end of each game there will be a vote to decide which custom world to use for the next game.
+# -> Please note that when RANDOM_WORLD_PICKING is enabled, a "randomly generated world" option will be addded to the voting so players can also choose to play on wild terrain.
+VOTE_FOR_NEXT_WORLD: false
+
+# If set to true, every available option for the next world voting will be displayed in chat.
+# -> The option VOTE_FOR_NEXT_WORLD has to be set to true to make this work.
+DISPLAY_VOTING_OPTIONS_IN_CHAT: true
+
+# If set to true, the plugin will fill the chests on a custom map with random items.
+# -> To customize the items in the chests please visit the BukkitGames wiki.
+FILL_RANDOM_CHESTS: false
+
+# Maximum amount of items to add to a chest on a custom map.
+# -> Only active when FILL_RANDOM_CHESTS is set to true.
+MAX_ITEMS_PER_CHEST: 3
+
+
+# --- COMMAND OPTIONS ---
+
+# A list of commands to execute before the server shuts down. Commands are seperated by a semicolon (";").
+PRE_SHUTDOWN_COMMANDS: "say Restarting server...;restart"
+
+# If set to true, a user will require the permission "bg.cmd.[cmdName]" for executing a user command.
+# -> Useful if you want to restrict a user command to certain groups or players.
+# -> Admin commands still require the permission "bg.admin".
+ENABLE_COMMAND_PERMISSIONS: false
+
+# If set to true, command aliases (e.g. "/kit" or "/start") will be disabled.
+DISABLE_COMMAND_ALIASES: false
+
+
+# --- WORLD/MAP OPTIONS ---
+
+# Set the radius for the circle around spawn the players will be spawned upon.
+PLAYER_SPAWN_RADIUS: 9
+
+# If set to true, the plugin will use the vanilla square world border. If set to false, the plugin will use its own circular world border.
+SQUARE_WORLD_BORDER: false
+
+# If square: Side length of the border in blocks. If circular: Radius of the world border around the spawn point.
+# -> Square: Recommended 600 blocks. Circular: Recommended 300 blocks.
+WORLD_BORDER_SIZE: 300
+
+# If set to true, the world border will shrink during the game.
+SHRINK_WORLD_BORDER: true
+
+
+# --- OTHER OPTIONS ---
+
+# If set to true, players will be allowed to join during a game and spectate it.
+SPECTATORS: true
+
+# If set to true, players will be kicked when they die. (If set to false, SPECTATORS has to be enabled!)
+KICK_ON_DEATH: false
+
+# If set to true, tributes will drop their head as a skull upon death.
+TRIBUTES_DROP_SKULL: true
+
+# If set to true, the scoreboard will no longer be displayed.
+DISABLE_SCOREBOARD: false
+
+# If set to true, all tributes will not be able to move until the game begins.
+PRE_GAME_FREEZE: false
+
+# If set to true, the plugin will allow all players to fly until the game begins. (If set to true, PRE_GAME_FREEZE has to be disabled!)
+PRE_GAME_FLY: false
+
+# If set to true, the name of the kit the player chose will be displayed in front of his name when he chats and in his death message.
+KIT_BEFORE_NAME: true
+
+
+# --- WEB-API OPTIONS ---
+# -> For more information about this feature, please visit the BukkitGames wiki.
+
+# If set to true, BukkitGames will provide an API for websites. 
+# -> The API can be access with the following URL: <your server ip>:<web-api-port>/?password=<web-api-password>
+WEB_API: false
+
+# If WEB_API is set to true, please enter a password so only authorised persons can access the API.
+# -> Please put your password in "".
+WEB_API_PASSWORD: "password"
+
+# If WEB_API is set to true, please set a port for it. Choose a port that does not conflict with other applications.
+WEB_API_PORT: 8184
+
+
+# --- DEBUG OPTIONS ---
+# -> Warning: If you are not debugging or experimenting, keep the following options disabled.
+
+# If set to true, the MOTD will be displayed without colors.
+DISABLE_COLORS_IN_MOTD: false
+
+# If set to true, the online/offline mode check will be bypassed. (This might cause damage to your database!)
+BYPASS_ONLINE_OFFLINE_MODE_CHECK: false
+
+# If set to true, BukkitGames will not check if the game should end. Basically, the game will keep going forever.
+DISABLE_GAME_END_CHECK: false
+
+# If set to true, at the end of a game BukkitGames will NOT celebrate the winner or restart the server. Basically, NOTHING will happen.
+DO_NOT_MAKE_GAME_END_AWESOME: false
+
+# If set to true, BukkitGames will shutdown the server if it could not establish a SQL connection.
+SHUTDOWN_SERVER_IF_SQL_CONNECTION_FAILS: false
+
+# If set to true, admins and moderators will not be teleported to spawn at the beginning of a game.
+DO_NOT_TELEPORT_GAMEMAKERS_AT_START: false
+
+# If set to true, the plugin will stop reacting to the AsyncPlayerChatEvent.
+DO_NOT_REACT_TO_CHAT_EVENT: false
+
+# If set to true, the plugin will stop blocking the EntityInteractEvent in pregame.
+DO_NOT_BLOCK_ENTITY_INTERACT: false
